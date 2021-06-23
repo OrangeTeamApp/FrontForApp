@@ -57,7 +57,7 @@ class UserEdit extends Component {
             },
             body: JSON.stringify(userData),
         });
-        window.location.href = 'http://localhost:3000/users/';
+        window.location.href = 'https://moonlit-byway-317410.appspot.com/users/';
     }
 
     render() {
