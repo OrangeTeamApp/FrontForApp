@@ -3,7 +3,6 @@ import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import AppNavbar from './AppNavbar';
 import { Link } from 'react-router-dom';
 
-//const USERS_REST_API_URL = 'http://localhost:8080';
 
 class UserList extends Component {
 
@@ -22,10 +21,6 @@ class UserList extends Component {
     async remove(id) {
         await fetch(`/api/users?id=${id}`, {
             method: 'DELETE',
-            // headers: {
-            //     'Accept': 'application/json',
-            //     'Content-Type': 'application/json'
-            // }
         }).then(() => {
             let updatedUsers = [...this.state.users].filter(i => i.id !== id);
             this.setState({users: updatedUsers});
