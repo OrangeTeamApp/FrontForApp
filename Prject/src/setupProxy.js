@@ -4,7 +4,7 @@ module.exports = function(app) {
     app.use(
         '/api',
         createProxyMiddleware({
-            target: 'http://34.88.120.86:8085/root',
+            target: 'https://moonlit-byway-317410.appspot.com/',
             pathRewrite: { '^/api': '' },
             changeOrigin: true
         })
