@@ -92,6 +92,7 @@ class UserEdit extends Component {
             ...this.state.validation,
             [name]: this.validation(name, value.toString())
         };
+        validation.allField.errors = [];
         const isValidForm = this.getValidationStatus(validation);
         this.setState({...this.state, validation, item, isValidForm});
     }
