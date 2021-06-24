@@ -12,3 +12,6 @@ code {
     monospace;
 }
 
+.error-field{
+  color: red;
+}
