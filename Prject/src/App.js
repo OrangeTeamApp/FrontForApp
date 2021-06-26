@@ -1,23 +1,3 @@
- //import React, { Component } from 'react'
- //import UserComponent from './components/UserComponent';
-
- 
-
-
-
-
-// function App() {
-// return (
-
-//      <div className="App">
-//        <UserComponent />
-//      </div>
-
-//    )
-//  }
-
-//  export default App;
-
 
 import React, { Component } from 'react';
 import './App.css';
@@ -26,7 +6,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import UserList from './UserList';
 import UserEdit from "./UserEdit";
 
-//const USERS_REST_API_URL = 'http://localhost:8080';
 
 class App extends Component {
   render() {

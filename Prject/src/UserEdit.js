@@ -113,7 +113,7 @@ class UserEdit extends Component {
             birthDate: item.birthDate
         }
 
-        const endpoint = +item.id ? `/api/users?id=${item.id}` : '/api/users';
+        const endpoint = +item.id ? `/api/users?id=${item.id}&action=update` : '/api/users?action=create';
 
         await fetch(endpoint, {
             method: (item.id) ? 'PUT' : 'POST',
