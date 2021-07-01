@@ -55,7 +55,7 @@ class UserEdit extends Component {
 
     async componentDidMount() {
         if (this.props.match.params.id !== 'new') {
-            const user = await (await fetch(`/api/users?id=${this.props.match.params.id}`)).json();
+            const user = await (await fetch(`/api/users/${this.props.match.params.id}`)).json();
             this.initValidation(user);
         }
     }
@@ -113,7 +113,7 @@ class UserEdit extends Component {
             birthDate: item.birthDate
         }
 
-        const endpoint = +item.id ? `/api/users?id=${item.id}&action=update` : '/api/users?action=create';
+        const endpoint = +item.id ? `/api/users/${item.id}` : '/api/users';
 
         await fetch(endpoint, {
             method: (item.id) ? 'PUT' : 'POST',
@@ -124,7 +124,7 @@ class UserEdit extends Component {
             body: JSON.stringify(userData),
         }).then(response => {
             if (![400, 500].includes(+response.status)) {
-                window.location.href = 'http://34.88.120.86:3000/users';
+                window.location.href = 'http://34.116.235.8:80/users';
                 return null;
             }
             return response.text();

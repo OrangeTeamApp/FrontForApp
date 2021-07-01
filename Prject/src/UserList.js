@@ -13,13 +13,13 @@ class UserList extends Component {
     }
 
     componentDidMount() {
-        fetch("/api/users?action=list")
+        fetch("/api/users")
         .then(response => response.json())
         .then(data => this.setState({users: data}));
     }
 
     async remove(id) {
-        await fetch(`/api/users?id=${id}&action=delete`, {
+        await fetch(`/api/users/${id}`, {
             method: 'DELETE',
         }).then(() => {
             let updatedUsers = [...this.state.users].filter(i => i.id !== id);
