@@ -124,7 +124,7 @@ class UserEdit extends Component {
             body: JSON.stringify(userData),
         }).then(response => {
             if (![400, 500].includes(+response.status)) {
-                window.location.href = 'http://34.116.235.8:80/users';
+                window.location.href = 'http://localhost:3000/users';
                 return null;
             }
             return response.text();
